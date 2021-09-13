@@ -1,0 +1,38 @@
+const { gql } = require('apollo-server');
+const { GraphQLJSON, GraphQLJSONObject } = require('graphql-type-json');
+
+const typeDefs = gql`
+    scalar JSONObject
+
+    type CryptoCoin {
+        id: Int!
+        name: String!
+        symbol: String!
+        total_supply: Int
+        max_supply: Int
+        last_updated: String
+        quote: JSONObject
+    }
+    
+    type Quote {
+        price: Float!
+        volume_24h: Int
+        percent_change_24h: Float
+        percent_change_7d: Float
+        market_cap_dominance: Int,
+        last_updated: String
+    }
+
+    enum Currency {
+        BTC
+        USD
+    }
+
+    type Query {
+        coins: [CryptoCoin]
+    }
+`;
+
+module.exports = typeDefs;
+
+
