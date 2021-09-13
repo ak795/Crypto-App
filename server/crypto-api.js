@@ -9,7 +9,7 @@ module.exports = class CryptoAPI extends RESTDataSource {
     }
 
     willSendRequest(request) {
-        request.headers.set('X-CMC_PRO_API_KEY', 'f7316f03-d9d7-4ed8-898f-a97909d60a79');
+        request.headers.set('X-CMC_PRO_API_KEY', 'YOUR_KEY');
         request.headers.set('Accept', 'application/json');
     }
 
